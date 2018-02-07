@@ -26,19 +26,19 @@ public class MyfastJson {
         parseUserList("[{\"id\":1,\"name\":\"xiaofang\"},{\"id\":1,\"name\":\"xiaofang\"}]");
 
 
-//        Group group = new Group();
-//        group.setId(1L);
-//        group.setName("amdin");
-//        group.setUsers(list);
-//
-//        String jsonstr = JSON.toJSONString(group);
-//        System.out.println(jsonstr);
-//
-//        JSONObject group1 =  JSON.parseObject(jsonstr);
-//        group1.put("name", "caier");
-//
-//        String jsonstr1 = JSON.toJSONString(group1);
-//        System.out.println(jsonstr1);
+        Group group = new Group();
+        group.setId(1L);
+        group.setName("amdin");
+        group.setUsers(list);
+
+        String jsonstr = JSON.toJSONString(group);
+        System.out.println(jsonstr);
+
+        JSONObject group1 =  JSON.parseObject(jsonstr);
+        group1.put("name", "caier");
+
+        String jsonstr1 = JSON.toJSONString(group1);
+        System.out.println(jsonstr1);
 
 
     }
