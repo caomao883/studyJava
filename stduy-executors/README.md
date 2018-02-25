@@ -1,18 +1,19 @@
 
 invokeAll方法学习
-ExecutorService executors =  Executors.newFixedThreadPool(3);
-List<MyTask> tasks = new ArrayList<MyTask>(); //MyTask实现了Callable<Integer>接口的实现类,call方法的返回类型为Integer
-List<Future<Integer>> futures= new ArrayList<Future<Integer>>(); //call返回的Integer类型根据tasks进入的顺序返回
-futures = executors.invokeAll(tasks,5L,TimeUnit.SECONDS);
+com.uestc.executors
+
+submit
+com.uestc.studysumit
 
 
-超过5秒，提前结束
-
-添加了返回结果类型，并且invokeAll没有执行完，主线程也不会走了
+notify,wait,join
+com.uestc.wait
 
 submit 和invokeAll区别
 submit参数使一个Callable
 invokeAll是多个
+关于具体看里面的README.md
+
 
 ExecutorService中submit和execute的区别有三点：
 1、接收的参数不同
@@ -22,4 +23,5 @@ ExecutorService中submit和execute的区别有三点：
 
 
 
-关于notify,wait,join具体看里面的README.md
+
+
