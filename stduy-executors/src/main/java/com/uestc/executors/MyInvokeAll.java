@@ -1,12 +1,10 @@
-package com.uestc.studysubmit;
-
-import com.sun.corba.se.impl.orbutil.closure.Future;
+package com.uestc.executors;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class StudySubmit {
+public class MyInvokeAll {
     public class MyTask implements Callable<Integer>{
         float price;
         int id;
@@ -23,26 +21,24 @@ public class StudySubmit {
     }
     public void deel(){
         int n = 10;
-        List<StudySubmit.MyTask> tasks = new ArrayList<StudySubmit.MyTask>();
-        List<java.util.concurrent.Future<Integer>> futures= new ArrayList<java.util.concurrent.Future<Integer>>();
-        ExecutorService executors =  Executors.newFixedThreadPool(1);
+        List<MyTask> tasks = new ArrayList<MyTask>();
+        List<Future<Integer>> futures= new ArrayList<Future<Integer>>();
+        ExecutorService executors =  Executors.newFixedThreadPool(3);
         for(int i = 0;i<n;++i){
-            tasks.add(new StudySubmit.MyTask(2.f,i));
+            tasks.add(new MyTask(2.f,i));
         }
-        for(StudySubmit.MyTask myTask:tasks){
-            System.out.println("...1...");
-            futures.add(executors.submit(myTask));
+        try {
+            futures = executors.invokeAll(tasks,5L,TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         System.out.println("dfasfdsaf");
-
         List<Integer> mylist = new ArrayList<Integer>();
         int i = 0;
-        for(java.util.concurrent.Future<Integer> future:futures){
+        for(Future<Integer> future:futures){
 
             try {
-                System.out.println("......"+i);
                 mylist.add(future.get());
-                System.out.println("......value = "+future.get());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -59,7 +55,7 @@ public class StudySubmit {
     }
     public static void main(String[] args){
 
-        StudySubmit myInvokeAll = new StudySubmit();
+        MyInvokeAll myInvokeAll = new MyInvokeAll();
         myInvokeAll.deel();
     }
 
