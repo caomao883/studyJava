@@ -10,6 +10,9 @@ futures = executors.invokeAll(tasks,5L,TimeUnit.SECONDS);
 
 添加了返回结果类型，并且invokeAll没有执行完，主线程也不会走了
 
+submit 和invokeAll区别
+submit参数使一个Callable
+invokeAll是多个
 
 ExecutorService中submit和execute的区别有三点：
 1、接收的参数不同
