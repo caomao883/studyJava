@@ -28,23 +28,30 @@ public class MyInvokeAll {
             tasks.add(new MyTask(2.f,i));
         }
         try {
-            futures = executors.invokeAll(tasks,10L,TimeUnit.SECONDS);
+            futures = executors.invokeAll(tasks,5L,TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("dfasfdsaf");
         List<Integer> mylist = new ArrayList<Integer>();
+        int i = 0;
         for(Future<Integer> future:futures){
+
             try {
                 mylist.add(future.get());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
                 e.printStackTrace();
+            } catch (CancellationException e){
+                System.out.println(tasks.get(i).id + " is cancel");
             }
+            i++;
         }
         for (Integer integer:mylist){
             System.out.println(integer);
         }
+        executors.shutdown();
     }
     public static void main(String[] args){
 
