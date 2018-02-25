@@ -1,6 +1,5 @@
 package study.collection;
 
-import scala.Int;
 
 import java.util.*;
 
