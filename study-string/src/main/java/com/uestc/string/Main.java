@@ -5,6 +5,12 @@ public class Main {
 
         //study_format();
         studysplit();
+        study_subString();
+    }
+
+    private static void study_subString() {
+        String a = "123456";
+        System.out.println(a.substring(2));
     }
 
     private static void study_format() {
