@@ -1,5 +1,7 @@
 package com.uestc.autowried;
 
+import org.springframework.stereotype.Component;
+
 public interface HelloService {
-    public void sayHello();
+    public String sayHello();
 }
