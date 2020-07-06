@@ -19,6 +19,7 @@ age: 18
 context: "curSize: ${cupSize}, age:${age}}"
 
 4.@ConfigurationProperties("girl") @Value升级版本 课程    3-1项目属性配置(20_09)
+http://127.0.0.1:8081/girl/girl2
 4.1 不用每个成员添加@Value
 4.2 只需要application配置即可
 

@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class CupSizeController {
     @Value("${cupSize}")
     private String curSize;
+    @Value("${age}")
+    private Integer age;
+    @Value("${context}")
+    private String context;
     @RequestMapping("cupSize")
     public String cupSize() {
-        return this.curSize;
+        return this.context;
     }
 }
