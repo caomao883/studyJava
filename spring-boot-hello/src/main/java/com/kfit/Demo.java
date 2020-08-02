@@ -1,8 +1,9 @@
 package com.kfit;
 
-import java.util.Date;
-
 import com.alibaba.fastjson.annotation.JSONField;
+import com.kfit.myannotiation.MyTestAnnotation;
+
+import java.util.Date;
 
 /**
  * 这是一个测试实体类.
@@ -24,6 +25,11 @@ public class Demo {
 	 */
 	@JSONField(serialize=false)
 	private String remarks;//备注信息.
+
+	@MyTestAnnotation("测试Annotation参数")
+	public void testAnnotation() {
+
+	}
 	
 	
 	public String getRemarks() {
