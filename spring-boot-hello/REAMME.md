@@ -41,7 +41,7 @@ public HttpMessageConverters fastJsonHttpMessageConverters() {
 
 3、进行访问测试，默认的端口号是8080;
 
-2.自定义实现类
+2.自定义注解
 -------------------------------
 https://blog.csdn.net/yb546822612/article/details/88116654
 

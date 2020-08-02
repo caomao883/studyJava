@@ -32,4 +32,10 @@ import java.util.Calendar;
 学习操作字符串，打印字符串
 
 
+spring-boot-hello
+--------------------------
+1.自定义注解 #com.kfit.myannotiation
+
+
+
 
