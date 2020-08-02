@@ -43,7 +43,7 @@ public HttpMessageConverters fastJsonHttpMessageConverters() {
 
 2.自定义注解
 -------------------------------
-https://blog.csdn.net/yb546822612/article/details/88116654
+[springboot 自定义注解](https://blog.csdn.net/yb546822612/article/details/88116654)
 
 com.kfit.myannotiation
 TestAnnotationAspect #定义切面类
@@ -54,3 +54,4 @@ TestAnnotationAspect #定义切面类
 
 @Before 在切点前执行方法,内容为指定的切点
 @Aspect 将一个类定义为一个切面类
+
